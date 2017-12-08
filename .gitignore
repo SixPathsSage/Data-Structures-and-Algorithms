@@ -4,3 +4,6 @@ LinkedList/out/
 Stack/Stack.iml
 Stack/.idea/
 Stack/out/
+*.iml
+*.xml
+*.class

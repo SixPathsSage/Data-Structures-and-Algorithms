@@ -1,15 +1,19 @@
 public class HashMap<K, V> {
-    Node<K, V>[] hashMap = new Node[50];
+    private Node<K, V>[] hashMap = new Node[50];
 
-    public int hash(String key)
+    public <K> int hash(K key)
     {
         return key.hashCode()%32;
     }
 
-    public Node get(String key)
+    public Node get(K key)
     {
         int hash = hash(key);
         Node<K, V> node = hashMap[hash];
+        if(node == null)
+        {
+            return null;
+        }
         if(node.key == key)
         {
             return node;
@@ -27,7 +31,7 @@ public class HashMap<K, V> {
         return null;
     }
 
-    public void put(String key, int value)
+    public void put(K key,V value)
     {
         int hash = hash(key);
         Node<K, V> node = new Node(key, value, hash, null);
@@ -54,8 +58,8 @@ public class HashMap<K, V> {
     }
 
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = new HashMap<>();
-        hashMap.put("Test", 24);
-        System.out.println(hashMap.get("Test").toString());
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        hashMap.put('T', 24);
+        System.out.println(hashMap.get('T'));
     }
 }

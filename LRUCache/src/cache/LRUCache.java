@@ -4,12 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRUCache implements Cache {
-    private Map<Integer, Node> map = new HashMap<>();
-    private DataStore store = new DataStore();
+    private Map<Integer, Node> map;
+    private DataStore store;
     private int capacity = 0;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
+        this.store = new DataStore();
+        this.map = new HashMap<>();
     }
 
     public int get(int key) {

@@ -1,5 +1,11 @@
 package algorithms;
-
+/*
+* Time Complexity
+*       Best: O(nlogn)
+*       Worst: O(n^2)
+*       Average: O(nlogn)
+* Space Complexity O(n)
+* */
 public class QuickSort {
     public void sort(int[] array) {
         sort(array, 0, array.length-1);
